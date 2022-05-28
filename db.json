@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Couch",
+      "description": "beige microfiber couch",
+      "price": 2000.00
+    },
+    {
+      "id": 2,
+      "title": "Table Lamp",
+      "description": "blue stone table lamp",
+      "price": 200.00
+    },
+    {
+      "id": 3,
+      "title": "Wool Rug",
+      "description": "8x10 gold and red area rug",
+      "price": 1200.00
+    }
+  ]
+}

@@ -1,3 +1,18 @@
+# How to run this app
+
+install json-server:
+npm install -g json-server
+
+Run the following command from the root directory to start the database server:
+json-server --watch db.json
+
+Then run ng serve and visit the following address in a browser:
+localhost:4200
+
+
+
+-------------------
+
 ## Coding Challenge
 In this challenge, you will create an application that allows you to create, retrieve, update, and delete products.
 
