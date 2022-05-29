@@ -1,0 +1,16 @@
+<form *ngIf="product">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Chair" name="title" [(ngModel)]="product.title">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="20.00" name="price" [(ngModel)]="product.price">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput name="description" placeholder="Description of the item..." [(ngModel)]="product.description"></textarea>
+    </mat-form-field>
+</form>

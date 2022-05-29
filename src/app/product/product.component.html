@@ -1,3 +1,6 @@
 <p>title:{{product.title}}</p>
 <p>decscription:{{product.description}}</p>
 <p>price:{{product.price}}</p>
+<a routerLink="/edit/{{product.id}}">
+    <mat-icon (click)="onEdit(product)">edit</mat-icon>
+</a>

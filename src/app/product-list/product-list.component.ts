@@ -9,7 +9,7 @@ import { ProductsService } from '../products.service';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
-    
+
   constructor(
     private productsService: ProductsService
   ) { }
@@ -19,7 +19,11 @@ export class ProductListComponent implements OnInit {
       console.log("http response: ", this.products)
       this.products = res;
       console.log("http response: ", this.products)
-    })
+    });
+  }
+
+  editProduct(product: Product) {
+    this.productsService.updateProduct(product).subscribe();
   }
 
 }

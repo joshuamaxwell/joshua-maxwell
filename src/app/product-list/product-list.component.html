@@ -2,7 +2,7 @@
 
 <ul>
     <li *ngFor="let product of products">
-        <app-product [product]="product"></app-product>
+        <app-product [product]="product" (onEditProduct)="editProduct(product)"></app-product>
     </li>
 </ul>
 

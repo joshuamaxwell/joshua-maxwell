@@ -9,9 +9,13 @@ import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { FormsModule } from '@angular/forms';
+import { AddEditProductComponent } from './add-edit-product/add-edit-product.component';
 
 
 @NgModule({
@@ -20,6 +24,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     HeaderComponent,
     ProductComponent,
     ProductListComponent,
+    AddEditProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,10 @@ import { ProductListComponent } from './product-list/product-list.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
