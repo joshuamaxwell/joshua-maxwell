@@ -22,8 +22,10 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  editProduct(product: Product) {
-    this.productsService.updateProduct(product).subscribe();
+  deleteProduct(id: number) {
+    this.productsService.deleteProduct(id).subscribe(res => {
+      this.products = this.products.filter(item => item.id !== id);
+    });
   }
 
 }

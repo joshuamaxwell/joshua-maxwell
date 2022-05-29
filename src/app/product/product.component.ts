@@ -8,15 +8,15 @@ import { Product } from '../product';
 })
 export class ProductComponent implements OnInit {
   @Input() product!: Product;
-  @Output() onEditProduct: EventEmitter<Product> = new EventEmitter();
+  @Output() onDeleteProduct: EventEmitter<number> = new EventEmitter();
 
   constructor(){ }
 
   ngOnInit(): void {
   }
 
-  onEdit(product: Product): void {
-    this.onEditProduct.emit(product);
+  onDelete(id: number): void {
+    this.onDeleteProduct.emit(id);
   }
 
 }

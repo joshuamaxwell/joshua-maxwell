@@ -1,6 +1,15 @@
-<p>title:{{product.title}}</p>
-<p>decscription:{{product.description}}</p>
-<p>price:{{product.price}}</p>
-<a routerLink="/edit/{{product.id}}">
-    <mat-icon (click)="onEdit(product)">edit</mat-icon>
-</a>
+<mat-card style="max-width: 500px;">
+    <mat-card-content>
+
+        <p>title:{{product.title}}</p>
+        <p>decscription:{{product.description}}</p>
+        <p>price:{{product.price}}</p>
+        <button mat-icon-button color="primary" routerLink="/edit/{{product.id}}">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="primary">
+            <mat-icon (click)="onDelete(product.id!)">delete</mat-icon>
+        </button>
+    </mat-card-content>
+</mat-card>
+<br>

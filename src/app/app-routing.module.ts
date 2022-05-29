@@ -6,6 +6,7 @@ import { AddEditProductComponent } from './add-edit-product/add-edit-product.com
 const routes: Routes = [
   { path: '', redirectTo: '/products', pathMatch: 'full' },
   { path: 'products', component: ProductListComponent },
+  { path: 'products/new', component: AddEditProductComponent },
   { path: 'edit/:id', component: AddEditProductComponent },
 ];
 

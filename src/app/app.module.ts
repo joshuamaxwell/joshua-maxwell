@@ -16,7 +16,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
 import { AddEditProductComponent } from './add-edit-product/add-edit-product.component';
-
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -36,6 +36,7 @@ import { AddEditProductComponent } from './add-edit-product/add-edit-product.com
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatCardModule,
     FormsModule
   ],
   providers: [],
