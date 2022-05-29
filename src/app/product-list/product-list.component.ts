@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { ProductsService } from '../products.service';
 
@@ -9,6 +9,7 @@ import { ProductsService } from '../products.service';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  @Input() search: string = '';
 
   constructor(
     private productsService: ProductsService
@@ -25,6 +26,15 @@ export class ProductListComponent implements OnInit {
   deleteProduct(id: number) {
     this.productsService.deleteProduct(id).subscribe(res => {
       this.products = this.products.filter(item => item.id !== id);
+    });
+  }
+
+  onSearchTerm(term: string) {
+    console.log(term);
+    this.productsService.getProducts().subscribe(res => {
+      this.products = res.filter(item => {
+        return item.title.toLowerCase().includes(term.toLocaleLowerCase());
+      })
     });
   }
 

@@ -8,15 +8,21 @@
     },
     {
       "id": 2,
-      "title": "Table Lamp",
+      "title": "Table Lamps",
       "description": "blue stone table lamp",
-      "price": 200
+      "price": "400"
     },
     {
       "id": 3,
       "title": "Wool Rug",
       "description": "8x10 gold and red area rug",
-      "price": 1200
+      "price": "1220"
+    },
+    {
+      "title": "waste basin",
+      "description": "black plastic trash can",
+      "price": "50",
+      "id": 4
     }
   ]
 }

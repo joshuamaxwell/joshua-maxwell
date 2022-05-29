@@ -1,5 +1,8 @@
-<h2>Browse All Products</h2>
-
+<h2>Search All Products</h2>
+<mat-form-field appearance="fill">
+    <mat-label>Product Name Search</mat-label>
+    <input #search matInput placeholder="Mug" (keyup)="onSearchTerm(search.value)" ngModel>
+</mat-form-field>
 <app-product *ngFor="let product of products" [product]="product" (onDeleteProduct)="deleteProduct(product.id!)"></app-product>
 
 
