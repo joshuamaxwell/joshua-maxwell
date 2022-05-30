@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./add-edit-product.component.css']
 })
 export class AddEditProductComponent implements OnInit {
-  product!: Product;
+  product: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,11 +20,7 @@ export class AddEditProductComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.route.snapshot.routeConfig?.path == 'products/new'){
-      this.product = {
-        title:"",
-        description:"",
-        price:0
-      }
+      this.product = {};
     } else {
       this.getProduct();
     }
