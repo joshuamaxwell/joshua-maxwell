@@ -4,34 +4,50 @@
         <mat-label>Name</mat-label>
         <input matInput
         placeholder="Chair"
+        required
+        #title="ngModel"
         name="title"
         minlength="3"
         maxlength="100"
         [(ngModel)]="product.title">
+        <mat-error *ngIf="title.invalid">{{title.errors?.['minlength'] ? "Name should be at least 3 characters." : ""}}</mat-error>
+        <mat-error *ngIf="title.invalid">{{title.errors?.['maxlength'] ? "Name should be at most 100 characters." : ""}}</mat-error>
+        <mat-error *ngIf="title.invalid">{{title.errors?.['required'] ? "title is required." : ""}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
         <mat-label>Price</mat-label>
         <input matInput
         placeholder="20.00"
+        required
+        #price="ngModel"
         type="number"
         name="price"
         min="1"
         max="20000"
         [(ngModel)]="product.price">
+        <mat-error *ngIf="price.invalid">{{price.errors?.['min'] ? "Price should be at least $1." : ""}}</mat-error>
+        <mat-error *ngIf="price.invalid">{{price.errors?.['max'] ? "Price should be at most $20,000." : ""}}</mat-error>
+        <mat-error *ngIf="price.invalid">{{price.errors?.['required'] ? "Price is required." : ""}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
         <mat-label>Description</mat-label>
         <textarea matInput
             name="description"
+            required
+            #desc="ngModel"
             placeholder="Description of the item..."
             minlength="5"
             maxlength="1000"
             [(ngModel)]="product.description"></textarea>
-    </mat-form-field>
+            <mat-error *ngIf="desc.invalid">{{desc.errors?.['minlength'] ? "The description should be at least 5 char long." : ""}}</mat-error>
+            <mat-error *ngIf="desc.invalid">{{desc.errors?.['maxlength'] ? "The description should be at most 1000 char long." : ""}}</mat-error>
+            <mat-error *ngIf="desc.invalid">{{desc.errors?.['required'] ? "The description is required." : ""}}</mat-error>
+        </mat-form-field>
     
     <button mat-button
+    [disabled]="!productForm.valid"
     color="primary"
     type="submit">
         {{product.id ? "UPDATE" : "ADD NEW"}}
