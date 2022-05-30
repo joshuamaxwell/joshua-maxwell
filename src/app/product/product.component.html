@@ -1,9 +1,9 @@
 <mat-card style="max-width: 500px;">
     <mat-card-content>
 
-        <p>title:{{product.title}}</p>
-        <p>decscription:{{product.description}}</p>
-        <p>price:{{product.price}}</p>
+        <p>Name: {{product.title}}</p>
+        <p>Description: {{product.description}}</p>
+        <p>{{product.price | currency}}</p>
         <button mat-icon-button color="primary" routerLink="/edit/{{product.id}}">
             <mat-icon>edit</mat-icon>
         </button>
