@@ -1,18 +1,39 @@
-<form *ngIf="product" #productForm="ngForm" (ngSubmit)="onSubmit(product)">
+<form #productForm="ngForm" (ngSubmit)="onSubmit(product)">
+
     <mat-form-field appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="Chair" name="title" [(ngModel)]="product.title">
+        <input matInput
+        placeholder="Chair"
+        name="title"
+        [(ngModel)]="product.title">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
         <mat-label>Price</mat-label>
-        <input matInput placeholder="20.00" name="price" [(ngModel)]="product.price">
+        <input matInput
+        placeholder=""
+        name="price"
+        min="1"
+        max="20000"
+        [(ngModel)]="product.price">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
         <mat-label>Description</mat-label>
-        <textarea matInput name="description" placeholder="Description of the item..." [(ngModel)]="product.description"></textarea>
+        <textarea matInput
+            name="description"
+            placeholder="Description of the item..."
+            minlength="5"
+            maxlength="1000"
+            [(ngModel)]="product.description"></textarea>
     </mat-form-field>
-    <button mat-button color="primary" type="submit">{{product.id ? "UPDATE" : "ADD NEW"}}</button>
+    
+    <button mat-button
+    color="primary"
+    type="submit">
+        {{product.id ? "UPDATE" : "ADD NEW"}}
+    </button>
+    
     <button mat-button color="primary" routerLink="/">CANCEL</button>
+
 </form>
