@@ -37,14 +37,22 @@ export class AddEditProductComponent implements OnInit {
     )
   }
 
-  onSave(product: Product): void {
+  updateProduct(product: Product): void {
     this.productService.updateProduct(product).subscribe()
     this.location.back();
   }
 
-  onCreate(product: Product): void {
+  createProduct(product: Product): void {
     this.productService.createProduct(product).subscribe()
     this.location.back();
+  }
+
+  onSubmit(product: Product): void {
+    if (product.id) {
+      this.updateProduct(product);
+    } else {
+      this.createProduct(product);
+    }
   }
 
 }
